@@ -34,7 +34,7 @@ export const DashboardPage = () => {
     getOrder();
     console.log(orders)
 
-}, [])
+}, []) //eslint-disable-line
  
 
 

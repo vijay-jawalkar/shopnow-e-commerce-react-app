@@ -15,7 +15,7 @@ export async function getUser(){
       const response = await fetch(`${process.env.REACT_APP_HOST}/users/${user_id}`, requestOption)
 
       if(!response.ok){
-        throw { message: response.statusText, status: response.status}
+        throw { message: response.statusText, status: response.status}  //eslint-disable-line
     }
       const data = await response.json();
 
@@ -39,7 +39,7 @@ export async function getUserOrders(){
       const response = await fetch(`${process.env.REACT_APP_HOST}/orders/?user.id=${user_id}`, requestOption)
 
       if(!response.ok){
-        throw { message: response.statusText, status: response.status}
+        throw { message: response.statusText, status: response.status}    //eslint-disable-line
     }
       const data = await response.json();
 
@@ -75,7 +75,7 @@ export async function createOrder(cartList, total, user){
     const response = await fetch( `${process.env.REACT_APP_HOST}/orders`, requestOption)
 
     if(!response.ok){
-        throw { message: response.statusText, status: response.status}
+        throw { message: response.statusText, status: response.status}   //eslint-disable-line
     }
     const data = await response.json();
 

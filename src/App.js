@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+
+
+import { FilterProvider, CartProvider } from "./context/index";
+import { AllRoutes } from "./routes/AllRoutes";
+import { Header, Footer, ScrollToTop } from "./components/index";
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter >
+    <ScrollToTop />
+    <CartProvider>
+      <FilterProvider>
+     
+        <Header />
+        <AllRoutes />
+        <Footer />
+      </FilterProvider>
+    </CartProvider>
+  </BrowserRouter>
   );
 }
 
-export default App;

@@ -3,8 +3,10 @@ import {useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import { useCart } from "../../../context"
+
 import { getUser, createOrder } from "../../../services";
+import { useCart } from "../../../context"
+
 
 export const Checkout = ({setCheckout}) => {
     const {cartList, total, clearCart} = useCart();
